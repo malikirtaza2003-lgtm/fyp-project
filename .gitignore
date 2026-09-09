@@ -2,7 +2,6 @@ node_modules/
 dist/
 coverage/
 .env
-!.env.production
 *.log
 npm-debug.log*
 pnpm-debug.log*
