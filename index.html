@@ -1,0 +1,29 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>SyncFlow</title>
+      <style>html, body { height: 100%; margin: 0; } #root { height: 100%; }</style>
+      <script>
+        (function() {
+          try {
+            var user = JSON.parse(localStorage.getItem('wf_auth_user'));
+            var userId = user ? (user.id || user._id || 'guest') : 'guest';
+            var theme = localStorage.getItem('wf_theme_' + userId);
+            if (theme === 'dark') {
+              document.documentElement.classList.add('dark');
+            }
+          } catch (e) {}
+        })();
+      </script>
+      <script src="https://meet.jit.si/external_api.js"></script>
+    </head>
+
+    <body>
+      <div id="root"></div>
+      <script type="module" src="/src/main.jsx"></script>
+    </body>
+  </html>
+  
